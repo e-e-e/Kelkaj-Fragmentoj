@@ -1,8 +1,10 @@
 (function (chaptersIn) {
 	"use strict";
 	
-	var chapters = shuffle(chaptersIn);
 	var WAIT = 100;
+	var PAUSE = 1000;
+	var CHAPTER_PAUSE = 5000;
+	var chapters = shuffle(chaptersIn);
 	var chapterIndex = -1;
 	var currentChapter = getNextChapter();
 	var index = 0;
@@ -37,7 +39,7 @@
 			index = 0;
 			currentChapter = getNextChapter();
 			setSubtitle();
-			setTimeout(loop, 2000);
+			setTimeout(loop, CHAPTER_PAUSE);
 			return;
 		}
 		var title = currentChapter.title;
@@ -53,7 +55,7 @@
 			}
 		} else {
 			setSubtitle();
-			setTimeout(loop,1000);
+			setTimeout(loop,PAUSE);
 		}
 	} 
 
@@ -85,7 +87,7 @@
 			var lastCharacter = ending[1];
 			switch (lastCharacter) {
 				case ',':
-					return 1*WAIT;
+					return 0.5*WAIT;
 				case '-':
 				case '–':
 				case '—':
