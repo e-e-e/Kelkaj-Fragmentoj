@@ -1,4 +1,8 @@
-var fabelo = {
+if(!document.chapters) {
+	document.chapters = [];
+}
+
+document.chapters.push({
 	title: 'fabelo',
 	script:[
 	{
@@ -764,5 +768,5 @@ var fabelo = {
 		index:151,
 		en:'<em>we are human with human shortcomings.</em>',
 		eo:'<em>ni estas homoj kun homecaj mankoj.</em>'
-	}
-]};
+	}]
+});
