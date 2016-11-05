@@ -48,11 +48,9 @@
 
 		if(fragment) {
 			var i = (fragment.index < 10) ? '0'+ fragment.index : fragment.index;
-			if(Math.random() < 0.5) {
-				setAudioAndSubtitle(fragment.en,'./voice/'+title+'/eo/'+title+'-'+i+'.mp3');
-			} else {
-				setAudioAndSubtitle(fragment.eo,'./voice/'+title+'/en/'+title+'-'+i+'.mp3');
-			}
+			(Math.random() < 0.5)
+				? setAudioAndSubtitle(fragment.en,'./voice/eo/'+title+'-'+i+'.mp3') // jshint ignore:line
+				: setAudioAndSubtitle(fragment.eo,'./voice/en/'+title+'-'+i+'.mp3'); // jshint ignore:line
 		} else {
 			setSubtitle();
 			setTimeout(loop,PAUSE);
@@ -66,17 +64,13 @@
 		} else {
 			subtitle.style.opacity = 1.0;
 			subtitle.innerHTML = text;
-		}
-		
+		}	
 	}
 
 	function setAudioAndSubtitle(text,sound) {
-		// determine delay
 		setSubtitle(text);
 		var pause = determinePauseTime(text);
 		var audio = new Audio(sound);
-		
-		// audio.oncanplay = function() { console.timeEnd('load sound'); };
 		audio.onended = function() { setTimeout(loop,pause); };
 		audio.play();
 	} 
