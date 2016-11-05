@@ -83,8 +83,8 @@ document.chapters.push({
 	},
 	{
 		index:16,
-		en:'But, much like Borge’s Funes the Memorious,',
-		eo:'Sed, samkiel Funes the Memorious de la aŭtoro Borge,'
+		en:'But, much like Borges’ Funes the Memorious,',
+		eo:'Sed, samkiel Funes the Memorious de la aŭtoro Borges,'
 	},
 	{
 		index:17,
